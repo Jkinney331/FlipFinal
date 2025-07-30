@@ -2,7 +2,7 @@ const FeatureSection = dynamic(() => import("@/components/sections/feature-secti
 const EmpowerCards = dynamic(() => import("@/components/sections/empowercard"));
 const BentoSection = dynamic(() => import("@/components/sections/bento-section"));
 const GrowthSection = dynamic(() => import("@/components/sections/growth-section"));
-const QuoteSection = dynamic(() => import("@/components/sections/quote-section"));
+// const QuoteSection = dynamic(() => import("@/components/sections/quote-section"));
 const CompanyShowcase = dynamic(() => import("@/components/sections/company-showcase"));
 const PricingSection = dynamic(() => import("@/components/sections/pricing-section"));
 const TestimonialSection = dynamic(() => import("@/components/sections/testimonial-section"));
@@ -20,7 +20,7 @@ export default function Home() {
       <HeroSection />
       <CompanyShowcase />
       <BentoSection />
-      <QuoteSection />
+      {/* <QuoteSection /> */}
       <EmpowerCards/>
       <FeatureSection />
       <GrowthSection />

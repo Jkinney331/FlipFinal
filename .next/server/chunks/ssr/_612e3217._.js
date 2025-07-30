@@ -7657,7 +7657,7 @@ const FeatureSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_
 const EmpowerCards = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/empowercard.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
 const BentoSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/bento-section.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
 const GrowthSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/growth-section.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
-const QuoteSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/quote-section.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
+// const QuoteSection = dynamic(() => import("@/components/sections/quote-section"));
 const CompanyShowcase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/company-showcase.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
 const PricingSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/pricing-section.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
 const TestimonialSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.r("[project]/src/components/sections/testimonial-section.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_context__.i));
@@ -7684,11 +7684,6 @@ function Home() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(BentoSection, {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
                 lineNumber: 22,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(QuoteSection, {}, void 0, false, {
-                fileName: "[project]/src/app/page.tsx",
-                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(EmpowerCards, {}, void 0, false, {
