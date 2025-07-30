@@ -677,60 +677,64 @@ export const siteConfig = {
   //   },
   // },
   pricing: {
-    title: "Pricing That Scales With You",
+    title: "One Investment, Infinite Returns",
     description:
-      "Choose the plan that fits your business needs and scale as you grow",
+      "Simple, transparent pricing. No hidden fees, no surprises.",
     pricingItems: [
+      // {
+      //   name: "Single price focus",
+      //   // href: "#",
+      //   price: "$9,500",
+      //   // period: "month",
+      //   // yearlyPrice: "$0",
+      //   features: [
+      //     "1 AI Team",
+      //     "Core integrations",
+      //     "Standard support",
+      //   ],
+      //   description: " Your complete AI solution in 14 days",
+      //   buttonText: "Get Started",
+      //   buttonColor: "bg-accent text-primary",
+      //   isPopular: false,
+      // },
       {
-        name: "Starter",
+        name: "Single price focus",
         // href: "#",
-        price: "$10,000",
-        period: "month",
-        // yearlyPrice: "$0",
-        features: [
-          "1 AI Team",
-          "Core integrations",
-          "Standard support",
-        ],
-        description: "Perfect for small businesses",
-        buttonText: "Get Started",
-        buttonColor: "bg-accent text-primary",
-        isPopular: false,
-      },
-      {
-        name: "Professional",
-        // href: "#",
-        price: "$30,000",
-        period: "month",
+        price: "9,500",
+        // period: "month",
         // yearlyPrice: "$120",
         features: [
-          "3 Teams working together",
-          "Advanced integrations",
-          "Priority support",
-          
+          "Complete 14-day AI solution implementation",
+"Custom AI model development and training",
+"Integration with your existing systems",
+"Comprehensive documentation",
+"2 weeks of post-launch support",
+"Knowledge transfer session for your team",
+"AI Control Dashboard included",
+"30-day money-back guarante",          
         ],
-        description: "Ideal for growing companies",
-        buttonText: "Go Professional",
-        buttonColor: "bg-secondary text-white",
-        isPopular: true,
+        description: "Your complete AI solution in 14 days",
+        // buttonText: "Go Professional",
+        // buttonColor: "bg-secondary text-white",
+        // isPopular: true,
       },
-      {
-        name: "Enterprise",
-        // href: "#",
-        price: "Contact Us",
-        period: "month",
-        // yearlyPrice: "$240",
-        features: [
-          "Unlimited teams",
-          "Custom configurations",
-          "Dedicated success manager",
+      // {
+      //   name: "Enterprise",
+      //   // href: "#",
+      //   price: "Contact Us",
+      //   period: "month",
+      //   // yearlyPrice: "$240",
+      //   features: [
+      //     "Unlimited teams",
+      //     "Custom configurations",
+      //     "Dedicated success manager",
           
-        ],
-        description: "Best for large organizations",
-        buttonText: "Contact Sales",
-        buttonColor: "bg-primary text-primary-foreground",
-        isPopular: false,
-      },
+      //   ],
+      //   description: "Best for large organizations",
+      //   buttonText: "Contact Sales",
+      //   buttonColor: "bg-primary text-primary-foreground",
+      //   isPopular: false,
+      // },
     ],
   },
   testimonials: [
@@ -942,37 +946,37 @@ export const siteConfig = {
     faQitems: [
       {
         id: 1,
-        question: "What are AI Agent Teams?",
+        question: "How can you deliver AI solutions in just 14 days?",
         answer:
           "AI Agent Teams are groups of specialized AI agents that work together like departments in your company. Each team handles specific functions—from marketing to operations—collaborating seamlessly to automate workflows and drive results.",
       },
       {
         id: 2,
-        question: "How does FlipTech Pro work?",
+        question: "What types of AI solutions do you build?",
         answer:
           "FlipTech Pro deploys AI teams that integrate with your existing tools, learn your business processes, and execute tasks autonomously. Teams share context and insights, creating a unified workforce that scales with your needs.",
       },
       {
         id: 3,
-        question: "How secure is my data?",
+        question: "How secure is my data during development?",
         answer:
           "We implement enterprise-grade security with end-to-end encryption, SOC 2 Type II certification, and role-based access controls. Your data never leaves our secure infrastructure and is protected by industry-leading standards.",
       },
       {
         id: 4,
-        question: "Can I integrate my existing tools?",
+        question: "Can you integrate with my existing tech stack?",
         answer:
           "Absolutely. FlipTech Pro teams connect seamlessly with your current tech stack through pre-built integrations and APIs. Your AI teams work within your existing workflows, not around them.",
       },
       {
         id: 5,
-        question: "Do you offer a free trial?",
+        question: "What happens after the 14-day deployment?",
         answer:
           "We offer free customized demos that give you a glimpse into the future of your operations with AI teams. See exactly how FlipTech Pro will transform your specific workflows before committing.",
       },
       {
         id: 6,
-        question: "How do AI teams save me time?",
+        question: "How much ongoing maintenance is required?",
         answer:
           "Our AI teams handle entire workflows—not just tasks. While one team manages customer inquiries, another analyzes data, and another optimizes operations. They work 24/7, multiplying your capacity without adding headcount.",
       },

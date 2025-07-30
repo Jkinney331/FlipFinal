@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LiquidButton } from "../ui/Liquid-button";
 
 const INITIAL_WIDTH = "70rem";
 const MAX_WIDTH = "800px";
@@ -113,18 +114,15 @@ export function Navbar() {
           <div className="flex h-[56px] items-center justify-between p-4">
             <Link href="/" className="flex items-center gap-3 w-52">
               {/* <Icons.logo className="size-7 md:size-10" /> */}
-              <p className="text-lg font-semibold text-primary">Flip-Tech AI</p>
+              <p className="text-lg font-semibold text-primary">Flip-Tech Pro</p>
             </Link>
 
             <NavMenu />
 
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
               <div className="flex items-center space-x-6">
-                <Link
-                  className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
-                  href="#"
-                >
-                  Try for free
+                <Link href="#">
+              <LiquidButton className="md:block hidden cursor-pointer">Try for free</LiquidButton>
                 </Link>
               </div>
               <ThemeToggle />
@@ -170,7 +168,7 @@ export function Navbar() {
                   <Link href="/" className="flex items-center gap-3">
                     <Icons.logo className="size-7 md:size-10" />
                     <p className="text-lg font-semibold text-primary">
-                      SkyAgent
+                      Flip-Tech Pro
                     </p>
                   </Link>
                   <button

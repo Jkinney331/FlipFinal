@@ -13,7 +13,7 @@ const FooterSection = () => {
     <footer id="footer" className="w-full pb-0">
       <div className="flex flex-col items-center justify-center p-10 text-center">
         <Link href="/" className="flex items-center gap-2 justify-center">
-          <p className="text-xl font-semibold text-primary">FlipTech AI</p>
+          <p className="text-xl font-semibold text-primary">FlipTech Pro</p>
         </Link>
 
         <p className="tracking-tight text-muted-foreground font-medium mt-4 max-w-xl">
@@ -32,7 +32,7 @@ const FooterSection = () => {
           <Icons.hipaaDark className="size-12" />
           <Icons.gdprDark className="size-12" />
         </div>
-
+        <p className="text-sm font-medium text-muted-foreground mt-2">© 2025 FlipTech Pro. All rights reserved.</p>
         <Link
           href="/privacy-policy"
           className="text-sm font-medium text-muted-foreground mt-6 hover:underline"

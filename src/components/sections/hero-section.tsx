@@ -1,6 +1,7 @@
 // import { HeroVideoSection } from "@/components/sections/hero-video-section";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
+import { LiquidButton } from "../ui/Liquid-button";
 
 const HeroSection = () => {
   const { hero } = siteConfig;
@@ -30,10 +31,8 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2.5 flex-wrap justify-center mb-2">
             <Link
-              href={hero.cta.primary.href}
-              className="bg-secondary h-9 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-32 px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
-            >
-              {hero.cta.primary.text}
+              href={""}>
+                <LiquidButton className="cursor-pointer"> Book Demo </LiquidButton>
             </Link>
             {/* <Link
               href={hero.cta.secondary.href}
