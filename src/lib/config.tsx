@@ -71,18 +71,19 @@ export const siteConfig = {
     //   </svg>
     // ),
     // badge: "Introducing custom automations",
-    title: "The Future of Work",
+    title: "Where Vision Meets Velocity",
     description:
-      "Orchestrated intelligence. Unified teams. Infinite scale.",
+      "From idea to production in 14 days",
+    support_text: "Transform your business with cutting-edge AI solutions, delivered with unmatched speed and expertise.",  
     cta: {
       primary: {
-        text: "Try for Free",
+        text: "Book Demo",
         href: "#",
       },
-      secondary: {
-        text: "Log in",
-        href: "#",
-      },
+      // secondary: {
+      //   text: "Log in",
+      //   href: "#",
+      // },
     },
   },
   companyShowcase: {
@@ -247,55 +248,55 @@ export const siteConfig = {
     ],
   },
   featureSection: {
-    title: "Meet Your Specialized AI Teams - dedicated departments, infinite possibilities. Deploy specialized AI teams across marketing, operations, product, research, and support.",
+    title: "Meet Your Specialized AI Agents",
     // description:
     //   "Meet Your Specialized AI Teams - dedicated departments, infinite possibilities. Deploy specialized AI teams across marketing, operations, product, research, and support.",
     items: [
       {
         id: 1,
-        title: "Research Team",
+        title: "Nancy",
         content:
-          "Data analysts and insight generators uncovering opportunities in real-time.",
+          "Natural Language Processing Specialist Transforms communication into actionable insights",
         // image:
         //   "https://images.unsplash.com/photo-1720371300677-ba4838fa0678?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 2,
-        title: "People & Culture Team",
+        title: "Ellis",
         content:
-          "Recruiting assistants and HR support streamlining your talent operations.",
+          "Predictive Analytics Expert Forecasts trends before they happen",
         // image:
         //   "https://images.unsplash.com/photo-1686170287433-c95faf6d3608?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8fA%3D%3D",
       },
       {
         id: 3,
-        title: "Custom Team Development",
+        title: "Justin",
         content:
-          "Build specialized teams tailored to your unique business needs.",
+          "Intelligent Automation Architect Streamlines workflows with surgical precision",
         // image:
         //   "https://images.unsplash.com/photo-1720378042271-60aff1e1c538?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 4,
-        title: "Internal Operations Team",
+        title: "Dan",
         content:
-          "Operations specialists handling workflows, process automation, and task coordination.",
+          "Social Media Strategist Amplifies your brand voice across all channels",
         // image:
         //   "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       },
       {
         id: 5,
-        title: "Marketing Department",
+        title: "Chloe",
         content:
-          "Social media strategists and community managers amplifying your brand voice 24/7.",
+          "Project Operations Manager Keeps everything running like clockwork",
         // image:
         //   "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       },
       {
         id: 6,
-        title: "Product Team ",
+        title: "Your Custom Agent",
         content:
-          "Web designers and UX/UI specialists creating exceptional digital experiences.",
+          "Built Just for You We'll create the exact AI agent your business needs",
         // image:
         //   "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       },

@@ -45,7 +45,7 @@ const FooterSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
-            text={tablet ? "FlipTech AI" : "Streamline your workflow"}
+            text={tablet ? "FlipTech Pro" : "Streamline your workflow"}
             fontSize={tablet ? 70 : 90}
             className="h-full w-full"
             squareSize={2}

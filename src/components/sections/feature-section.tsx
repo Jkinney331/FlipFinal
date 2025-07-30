@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/section-header";
-import { Feature as FeatureComponent } from "@/components/ui/feature-slideshow";
+import { Feature as FeatureComponent } from "@/components/ui/feature-card";
 import { siteConfig } from "@/lib/config";
 
 const FeatureSection = () => {
@@ -20,10 +20,10 @@ const FeatureSection = () => {
       </SectionHeader>
       <div className="w-full h-full lg:h-[450px] flex items-center justify-center">
         <FeatureComponent
-          collapseDelay={5000}
-          linePosition="bottom"
+          // collapseDelay={5000}
+          // linePosition="bottom"
           featureItems={items}
-          lineColor="bg-secondary"
+          // lineColor="bg-secondary"
         />
       </div>
     </section>

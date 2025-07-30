@@ -1,4 +1,4 @@
-const FeatureSection = dynamic(() => import("@/components/sections/feature-section"));
+// const FeatureSection = dynamic(() => import("@/components/sections/feature-section"));
 const EmpowerCards = dynamic(() => import("@/components/sections/empowercard"));
 const BentoSection = dynamic(() => import("@/components/sections/bento-section"));
 const GrowthSection = dynamic(() => import("@/components/sections/growth-section"));
@@ -10,6 +10,7 @@ const FAQSection = dynamic(() => import("@/components/sections/faq-section"));
 const CTASection = dynamic(() => import("@/components/sections/cta-section"));
 const FooterSection = dynamic(() => import("@/components/sections/footer-section"));
 const FlipTechProcess = dynamic(() => import("@/components/sections/fliptechprocess"));
+const AIAgentsSection = dynamic(() => import("@/components/AIAgentsSection"));
 
 import HeroSection from "@/components/sections/hero-section";
 import dynamic from "next/dynamic";
@@ -22,7 +23,8 @@ export default function Home() {
       <BentoSection />
       {/* <QuoteSection /> */}
       <EmpowerCards/>
-      <FeatureSection />
+      {/* <FeatureSection /> */}
+      <AIAgentsSection/>
       <GrowthSection />
       <FlipTechProcess/>
       <PricingSection />

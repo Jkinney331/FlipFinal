@@ -24,6 +24,9 @@ const HeroSection = () => {
             <p className="text-base md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight">
               {hero.description}
             </p>
+            <p className="text-base md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight">
+              {hero.support_text}
+            </p>
           </div>
           <div className="flex items-center gap-2.5 flex-wrap justify-center mb-2">
             <Link
@@ -32,12 +35,12 @@ const HeroSection = () => {
             >
               {hero.cta.primary.text}
             </Link>
-            <Link
+            {/* <Link
               href={hero.cta.secondary.href}
               className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-primary rounded-full transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80"
             >
               {hero.cta.secondary.text}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
