@@ -2,12 +2,27 @@
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 import { LiquidButton } from "../ui/Liquid-button";
+import LightRays from "../ui/auoralightray";
 
 const HeroSection = () => {
   const { hero } = siteConfig;
 
   return (
     <section id="hero" className="w-full relative">
+       <div style={{ width: '100%', height: '600px', position: 'absolute'}}>
+  <LightRays
+    raysOrigin="top-center"
+    raysColor="#00ffff"
+    raysSpeed={1.5}
+    lightSpread={0.8}
+    rayLength={1.2}
+    followMouse={true}
+    mouseInfluence={0.1}
+    noiseAmount={0.1}
+    distortion={0.05}
+    className="custom-rays"
+  />
+</div>
       <div className="relative flex flex-col items-center w-full px-6">
         <div className="absolute inset-0">
           <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full animated-bg rounded-b-xl" />

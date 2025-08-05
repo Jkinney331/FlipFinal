@@ -3,7 +3,7 @@
 
 
 
-@layer utilities {
+/* @layer utilities {
   @keyframes pulseGradient {
 
     0%,
@@ -22,7 +22,7 @@
     background: radial-gradient(125% 125% at 50% 10%, var(--background) 30%, var(--secondary) 100%);
     animation: pulseGradient 6s ease-in-out infinite;
   }
-}
+} */
 
 /* 🔆 Glow Animation */
 @keyframes pulseGlow {
@@ -36,9 +36,15 @@
     box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.6);
   }
 }
- /* AI Agent Section  */
-
- /* ------------- */
+ /* Aurora Light Ray */
+.light-rays-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
 
 /* 👇 Optional class you can reuse on cards */
 .glowing-card {
