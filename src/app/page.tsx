@@ -1,7 +1,7 @@
 // const FeatureSection = dynamic(() => import("@/components/sections/feature-section"));
 const EmpowerCards = dynamic(() => import("@/components/sections/empowercard"));
 const BentoSection = dynamic(() => import("@/components/sections/bento-section"));
-// const GrowthSection = dynamic(() => import("@/components/sections/growth-section"));
+const GrowthSection = dynamic(() => import("@/components/sections/growth-section"));
 // const QuoteSection = dynamic(() => import("@/components/sections/quote-section"));
 const CompanyShowcase = dynamic(() => import("@/components/sections/company-showcase"));
 const PricingSection = dynamic(() => import("@/components/sections/pricing-section"));
@@ -28,12 +28,12 @@ export default function Home() {
       <CompanyShowcase />
       <BentoSection />
       {/* <QuoteSection /> */}
-      <EmpowerCards/>
+      {/* <EmpowerCards/> */}
       {/* <FeatureSection /> */}
       <AIAgentsSection/>
       <AIDashboard/>
       <GlowCard/>
-      {/* <GrowthSection /> */}
+      <GrowthSection />
       <FlipTechProcess/>
       <CaseStudiesSection/>
       <WhyNowSection/>

@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface Step {
@@ -11,77 +11,36 @@ interface Step {
 }
 
 export default function FlipTechProcess() {
-  const controls = useAnimation();
-  const lineRef = useRef<HTMLDivElement | null>(null);
   const [progress, setProgress] = useState(0);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const steps: Step[] = [
     {
-      icon: (
-        <Image
-          src="/bulb.svg"
-          alt="icon"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      ),
+      icon: <Image src="/bulb.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
       day: "Days 1–2",
       title: "Discovery & Strategy",
       desc: "We uncover your business challenges and outline the perfect AI solution.",
     },
     {
-      icon: (
-        <Image
-          src="/calender.svg"
-          alt="icon"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      ),
+      icon: <Image src="/calender.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
       day: "Days 3–5",
       title: "Solution Design",
       desc: "Our engineers architect the technical approach and data strategy.",
     },
     {
-      icon: (
-        <Image
-          src="/code.svg"
-          alt="icon"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      ),
+      icon: <Image src="/code.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
       day: "Days 6–10",
       title: "Rapid Development",
       desc: "Intensive development sprint brings your AI solution to life.",
     },
     {
-      icon: (
-        <Image
-          src="/testing.svg"
-          alt="icon"
-          width={28}
-          height={28}
-          className="w-6 h-6"
-        />
-      ),
+      icon: <Image src="/testing.svg" alt="icon" width={28} height={28} className="w-6 h-6" />,
       day: "Days 11–13",
       title: "Testing & Refinement",
       desc: "Rigorous testing ensures your AI solution works flawlessly.",
     },
     {
-      icon: (
-        <Image
-          src="/rocket.svg"
-          alt="icon"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      ),
+      icon: <Image src="/rocket.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
       day: "Day 14",
       title: "Launch",
       desc: "Your AI solution goes live with comprehensive documentation and support.",
@@ -89,27 +48,43 @@ export default function FlipTechProcess() {
   ];
 
   useEffect(() => {
-    let start = 0;
-    const total = 100;
-    const duration = 2000;
-    const interval = 20;
-    const increment = (interval / duration) * total;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Restart animation each time the section is in view
+            let start = 0;
+            const total = 100;
+            const duration = 2000;
+            const interval = 20;
+            const increment = (interval / duration) * total;
 
-    const animate = () => {
-      start += increment;
-      if (start >= total) {
-        start = total;
-      }
-      setProgress(start);
-      if (start < total) {
-        setTimeout(animate, interval);
-      }
-    };
-    animate();
+            const animate = () => {
+              start += increment;
+              if (start >= total) start = total;
+              setProgress(start);
+              if (start < total) {
+                setTimeout(animate, interval);
+              }
+            };
+
+            setProgress(0); // Reset before animating
+            animate();
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of section is visible
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="w-full px-4 md:px-8 py-16 text-center bg-white dark:bg-[#18181B] transition-colors duration-300">
+    <section
+      ref={sectionRef}
+      className="w-full px-4 md:px-8 py-16 text-center bg-white dark:bg-[#18181B] transition-colors duration-300"
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
         THE <span className="text-blue-500">FLIP-TECH</span> PROCESS
       </h2>
@@ -146,7 +121,9 @@ export default function FlipTechProcess() {
                   {step.icon}
                 </div>
                 <p className="text-xs md:text-sm text-emerald-400 font-semibold mt-2">{step.day}</p>
-                <h3 className="mt-3 text-base md:text-lg font-bold text-black dark:text-white">{step.title}</h3>
+                <h3 className="mt-3 text-base md:text-lg font-bold text-black dark:text-white">
+                  {step.title}
+                </h3>
                 <p className="mt-1 max-w-[220px] text-xs md:text-sm text-gray-600 dark:text-gray-400">
                   {step.desc}
                 </p>
