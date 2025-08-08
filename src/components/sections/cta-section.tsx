@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
+import { LiquidButton } from "../ui/Liquid-button";
 
 const CTASection = () => {
   const { ctaSection } = siteConfig;
@@ -24,12 +25,14 @@ const CTASection = () => {
               {ctaSection.title}
             </h1>
             <div className="absolute bottom-10 flex flex-col items-center justify-center gap-2">
+              <LiquidButton>
               <Link
                 href={ctaSection.button.href}
-                className="bg-white text-black font-semibold text-sm h-10 w-fit px-4 rounded-full flex items-center justify-center shadow-md"
+                className=" text-black font-semibold text-sm h-10 w-fit px-4 bg-transparent flex items-center justify-center"
               >
                 {ctaSection.button.text}
               </Link>
+              </LiquidButton>
               <span className="text-white text-sm">{ctaSection.subtext}</span>
             </div>
           </div>

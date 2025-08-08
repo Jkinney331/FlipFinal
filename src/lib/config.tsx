@@ -4,7 +4,6 @@ import { SecondBentoAnimation } from "@/components/second-bento-animation";
 import { ThirdBentoAnimation } from "@/components/third-bento-animation";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Globe } from "@/components/ui/globe";
-import { LiquidButton } from "@/components/ui/Liquid-button";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -924,11 +923,10 @@ export const siteConfig = {
     id: "cta",
     title: "Automate. Simplify. Thrive",
     backgroundImage: "/agent-cta-background.webp",
-     button: (
-      <LiquidButton href="/contact">
-        FREE custom demo today
-      </LiquidButton>
-    ),
+    button: {
+      text: "FREE custom demo today",
+      href: "/contact",
+    },
     subtext: "No obligations, no questions asked",
   },
   footerLinks: [
