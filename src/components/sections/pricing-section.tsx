@@ -4,6 +4,9 @@ import { SectionHeader } from "@/components/section-header";
 import { siteConfig } from "@/lib/config";
 import { motion } from "motion/react";
 import { LiquidButton } from "../ui/Liquid-button";
+import { Shield, Users, Star, Clock, Zap } from "lucide-react";
+import { SavingsCalculator } from "../ui/SavingCalculator";
+
 
 const PricingSection = () => {
   const tier = siteConfig.pricing.pricingItems[0];
@@ -23,11 +26,11 @@ const PricingSection = () => {
   return (
     <section
       id="pricing"
-      className="flex flex-col items-center justify-center gap-10 py-20 px-4 w-full relative"
+      className="flex flex-col items-center justify-center gap-10 py-20 px-6 sm:px-4 w-full relative"
     >
       <SectionHeader>
         {/* Pricing name and title */}
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-center">
+        <h2 className="text-xl md:text-4xl font-semibold tracking-tight text-center">
           {siteConfig.pricing.title}
         </h2>
         <p className="text-muted-foreground text-center font-medium max-w-2xl mx-auto">
@@ -88,12 +91,32 @@ const PricingSection = () => {
         </ul>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
+        <div className="flex flex-col gap-2 justify-center items-center">
           <LiquidButton className="cursor-pointer">
             Book Your Demo Today
           </LiquidButton>
+          <div className="mt-3 text-sm text-red-700 dark:text-red-300 inline-flex items-center gap-2">
+             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                  Only 3 spots left this month
+              </div>
         </div>
+         
       </div>
+      <div className="grid grid-cols-3 gap-3">
+              <div className="p-4 rounded-xl bg-white/70 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-700 text-center">
+                <Shield className="w-5 h-5 mx-auto text-green-600" />
+                <p className="text-xs mt-2">30-Day Guarantee</p>
+              </div>
+              <div className="p-4 rounded-xl bg-white/70 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-700 text-center">
+                <Users className="w-5 h-5 mx-auto text-blue-600" />
+                <p className="text-xs mt-2">500+ Clients</p>
+              </div>
+              <div className="p-4 rounded-xl bg-white/70 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-700 text-center">
+                <Star className="w-5 h-5 mx-auto text-yellow-500" />
+                <p className="text-xs mt-2">4.9/5 Rating</p>
+              </div>
+            </div>
+            <SavingsCalculator/>
     </section>
   );
 };

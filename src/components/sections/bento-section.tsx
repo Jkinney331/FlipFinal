@@ -24,7 +24,7 @@ const BentoSection = () => {
           </p>
         </SectionHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden">
           {items.map((item) => (
             <div
               key={item.id}
@@ -41,7 +41,7 @@ const BentoSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

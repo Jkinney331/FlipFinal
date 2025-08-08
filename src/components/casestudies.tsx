@@ -28,10 +28,12 @@ const caseStudies = [
 
 const CaseStudiesSection = () => {
   return (
-    <section className="w-full px-8 py-16 max-w-7xl mx-auto cursor-pointer">
+    <section className="w-full px-8 py-16 max-w-full 2xl:px-24 mx-auto cursor-pointer">
       <h2 className="text-3xl font-bold mb-10 text-center dark:text-white text-gray-900">
         Case Studies
       </h2>
+      <h2 className="text-xl  mb-10 text-center dark:text-white text-gray-400">
+     See how {`we've`} transformed businesses with AI in just 14 days. Real results, real impact.</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {caseStudies.map((project, index) => (
@@ -58,7 +60,7 @@ const CaseStudiesSection = () => {
               )}
             >
               {/* Image */}
-              <div className="w-full h-48 relative rounded-lg overflow-hidden mb-4">
+              <div className="w-full h-60 2xl:h-96 relative rounded-lg overflow-hidden mb-4">
                 <Image
                   src={project.image}
                   alt={project.title}

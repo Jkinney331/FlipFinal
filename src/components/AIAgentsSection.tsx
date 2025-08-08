@@ -9,7 +9,7 @@ import {
   MessageSquare,
   CheckCircle,
   Sparkles,
-  Settings,
+  // Settings,
 } from "lucide-react";
 
 const agentData = [
@@ -117,19 +117,19 @@ const agentData = [
         </div>
 
         {/* Connection Line */}
-        <div className="relative flex items-center justify-center mb-16">
+        {/* <div className="relative flex items-center justify-center mb-16">
           <div className="w-1 h-20 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 animate-pulse rounded-full" />
-        </div>
+        </div> */}
 
         {/* AI Control Dashboard Section */}
-        <div className="max-w-4xl mx-auto p-8 bg-zinc-100 dark:bg-zinc-800 rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-md text-center">
+        {/* <div className="max-w-4xl mx-auto p-8 bg-zinc-100 dark:bg-zinc-800 rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-md text-center">
           <Settings className="mx-auto text-indigo-500 dark:text-indigo-400" size={48} />
           <h4 className="text-2xl font-semibold text-black dark:text-white mt-4">{selectedAgent.name}'s Dashboard</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
             Fine-tune and monitor: <span className="font-medium text-indigo-600 dark:text-indigo-400">{selectedAgent.role}</span>
           </p>
           <p className="text-sm text-muted-foreground mt-1">{selectedAgent.description}</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

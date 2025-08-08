@@ -14,6 +14,8 @@ const AIAgentsSection = dynamic(() => import("@/components/AIAgentsSection"));
 const GlowCard = dynamic(() => import("@/components/ui/GlowEffectCard"));
 
 import CaseStudiesSection from "@/components/casestudies";
+import { AIDashboard } from "@/components/sections/AiDashboard";
+import ContactSection from "@/components/sections/Contact";
 import HeroSection from "@/components/sections/hero-section";
 import WhyNowSection from "@/components/WhyNowSec";
 import dynamic from "next/dynamic";
@@ -21,6 +23,7 @@ import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
+      
       <HeroSection />
       <CompanyShowcase />
       <BentoSection />
@@ -28,6 +31,7 @@ export default function Home() {
       <EmpowerCards/>
       {/* <FeatureSection /> */}
       <AIAgentsSection/>
+      <AIDashboard/>
       <GlowCard/>
       {/* <GrowthSection /> */}
       <FlipTechProcess/>
@@ -35,6 +39,7 @@ export default function Home() {
       <WhyNowSection/>
       <PricingSection />
       <TestimonialSection />
+      <ContactSection/>
       <FAQSection />
       <CTASection />
       <FooterSection />

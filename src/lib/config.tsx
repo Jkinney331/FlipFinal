@@ -4,6 +4,7 @@ import { SecondBentoAnimation } from "@/components/second-bento-animation";
 import { ThirdBentoAnimation } from "@/components/third-bento-animation";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Globe } from "@/components/ui/globe";
+import { LiquidButton } from "@/components/ui/Liquid-button";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -300,6 +301,44 @@ export const siteConfig = {
         // image:
         //   "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       },
+    ],
+  },
+  AIDashboardSection: {
+    // title: "Simple. Seamless. Smart.",
+    // description:
+    //   "Discover how SkyAgent transforms your commands into action in four easy steps",
+    items: [
+      {
+        id: 1,
+        title: "AI-Powered Analytics",
+        content:
+          "Get instant insights into your business performance with our advanced AI analytics dashboard. Monitor key metrics, track trends, and make data-driven decisions in real-time.",
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop' 
+      },
+      {
+        id: 2,
+        title: 'Smart Automation',
+    content: 'Automate repetitive tasks and workflows with intelligent AI agents. From customer service to data processing, our dashboard handles it all while you focus on growth.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+      },
+      {
+        id: 3,
+       title: 'Real-Time Monitoring',
+    content: 'Stay ahead of the curve with real-time monitoring and alerts. Our dashboard provides instant notifications and predictive insights to keep your business running smoothly.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
+  },
+      {
+        id: 4,
+       title: 'Custom Integrations',
+    content: 'Seamlessly integrate with your existing tools and platforms. Our dashboard connects with CRM systems, marketing tools, and more to create a unified business ecosystem.',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop'
+  },
+  { 
+        id: 5,
+    title: 'Advanced Reporting',
+    content: 'Generate comprehensive reports and visualizations that tell your business story. From executive summaries to detailed analytics, get the insights you need to succeed.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
+  },
     ],
   },
   bentoSection: {
@@ -740,201 +779,100 @@ export const siteConfig = {
   testimonials: [
     {
       id: "1",
-      name: "Alex Rivera",
-      role: "CTO at InnovateTech",
-      img: "https://randomuser.me/api/portraits/men/91.jpg",
+      name: "Yannick R.",
+      role: "Game Studio Director",
+      img: "https://randomuser.me/api/portraits/men/12.jpg",
       description: (
         <p>
-          The AI-driven analytics from #QuantumInsights have revolutionized our
-          product development cycle.
-          <Highlight>
-            Insights are now more accurate and faster than ever.
-          </Highlight>{" "}
-          A game-changer for tech companies.
+          "FlipTech Pro's AI character system cut our NPC development time by 70%. Players can't tell they're not human-scripted. Game-changing for our studio."
         </p>
       ),
     },
     {
       id: "2",
-      name: "Samantha Lee",
-      role: "Marketing Director at NextGen Solutions",
-      img: "https://randomuser.me/api/portraits/women/12.jpg",
+      name: "Keith M.",
+      role: "Lead Game Developer",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
       description: (
         <p>
-          Implementing #AIStream&apos;s customer prediction model has
-          drastically improved our targeting strategy.
-          <Highlight>Seeing a 50% increase in conversion rates!</Highlight>{" "}
-          Highly recommend their solutions.
+          "Their AI workflow automation handles everything from combat patterns to NPC emotions. We shipped 6 months early. Incredible 14-day delivery."
         </p>
       ),
     },
     {
       id: "3",
-      name: "Raj Patel",
-      role: "Founder & CEO at StartUp Grid",
+      name: "Mike S.",
+      role: "Tech Startup Founder",
       img: "https://randomuser.me/api/portraits/men/45.jpg",
       description: (
         <p>
-          As a startup, we need to move fast and stay ahead. #CodeAI&apos;s
-          automated coding assistant helps us do just that.
-          <Highlight>Our development speed has doubled.</Highlight> Essential
-          tool for any startup.
+          "The reinforcement learning dashboard learns from every user interaction. Our mobile ordering app now predicts with 89% accuracy. ROI in weeks."
         </p>
       ),
     },
     {
       id: "4",
-      name: "Emily Chen",
-      role: "Product Manager at Digital Wave",
-      img: "https://randomuser.me/api/portraits/women/83.jpg",
+      name: "Damon L.",
+      role: "Investment Fund Manager",
+      img: "https://randomuser.me/api/portraits/men/67.jpg",
       description: (
         <p>
-          #VoiceGen&apos;s AI-driven voice synthesis has made creating global
-          products a breeze.
-          <Highlight>Localization is now seamless and efficient.</Highlight> A
-          must-have for global product teams.
+          "Their trading agent consistently outperforms our manual strategies by 23%. Best investment decision we've made this year."
         </p>
       ),
     },
     {
       id: "5",
-      name: "Michael Brown",
-      role: "Data Scientist at FinTech Innovations",
-      img: "https://randomuser.me/api/portraits/men/1.jpg",
+      name: "Josh T.",
+      role: "Healthcare Innovation Director",
+      img: "https://randomuser.me/api/portraits/men/23.jpg",
       description: (
         <p>
-          Leveraging #DataCrunch&apos;s AI for our financial models has given us
-          an edge in predictive accuracy.
-          <Highlight>
-            Our investment strategies are now powered by real-time data
-            analytics.
-          </Highlight>{" "}
-          Transformative for the finance industry.
+          "The healthcare chatbot handles consultations and scheduling flawlessly. 60% reduction in wait times. Patients love it."
         </p>
       ),
     },
     {
       id: "6",
-      name: "Linda Wu",
-      role: "VP of Operations at LogiChain Solutions",
-      img: "https://randomuser.me/api/portraits/women/5.jpg",
+      name: "Curtis P.",
+      role: "Medical Practice Owner",
+      img: "https://randomuser.me/api/portraits/men/33.jpg",
       description: (
         <p>
-          #LogiTech&apos;s supply chain optimization tools have drastically
-          reduced our operational costs.
-          <Highlight>
-            Efficiency and accuracy in logistics have never been better.
-          </Highlight>{" "}
+          "FlipTech Pro delivered a medical AI assistant that triages patients 24/7. Accuracy rivals our senior nurses. Revolutionary for healthcare."
         </p>
       ),
     },
     {
       id: "7",
-      name: "Carlos Gomez",
-      role: "Head of R&D at EcoInnovate",
-      img: "https://randomuser.me/api/portraits/men/14.jpg",
+      name: "Teresa H.",
+      role: "AI Operations Lead",
+      img: "https://randomuser.me/api/portraits/women/36.jpg",
       description: (
         <p>
-          By integrating #GreenTech&apos;s sustainable energy solutions,
-          we&apos;ve seen a significant reduction in carbon footprint.
-          <Highlight>
-            Leading the way in eco-friendly business practices.
-          </Highlight>{" "}
-          Pioneering change in the industry.
+          "Their data sourcing solution automated our entire training pipeline. What took weeks now takes hours. Essential for scaling AI."
         </p>
       ),
     },
     {
       id: "8",
-      name: "Aisha Khan",
-      role: "Chief Marketing Officer at Fashion Forward",
-      img: "https://randomuser.me/api/portraits/women/56.jpg",
+      name: "Ines M.",
+      role: "Data Science Director",
+      img: "https://randomuser.me/api/portraits/women/28.jpg",
       description: (
         <p>
-          #TrendSetter&apos;s market analysis AI has transformed how we approach
-          fashion trends.
-          <Highlight>
-            Our campaigns are now data-driven with higher customer engagement.
-          </Highlight>{" "}
-          Revolutionizing fashion marketing.
+          "FlipTech Pro built us a data collection system that's both ethical and efficient. 10x improvement in data quality. Exceeded all expectations."
         </p>
       ),
     },
     {
       id: "9",
-      name: "Tom Chen",
-      role: "Director of IT at HealthTech Solutions",
-      img: "https://randomuser.me/api/portraits/men/18.jpg",
+      name: "Jack K.",
+      role: "ML Engineering Manager",
+      img: "https://randomuser.me/api/portraits/men/9.jpg",
       description: (
         <p>
-          Implementing #MediCareAI in our patient care systems has improved
-          patient outcomes significantly.
-          <Highlight>
-            Technology and healthcare working hand in hand for better health.
-          </Highlight>{" "}
-          A milestone in medical technology.
-        </p>
-      ),
-    },
-    {
-      id: "10",
-      name: "Sofia Patel",
-      role: "CEO at EduTech Innovations",
-      img: "https://randomuser.me/api/portraits/women/73.jpg",
-      description: (
-        <p>
-          #LearnSmart&apos;s AI-driven personalized learning plans have doubled
-          student performance metrics.
-          <Highlight>
-            Education tailored to every learner&apos;s needs.
-          </Highlight>{" "}
-          Transforming the educational landscape.
-        </p>
-      ),
-    },
-    {
-      id: "11",
-      name: "Jake Morrison",
-      role: "CTO at SecureNet Tech",
-      img: "https://randomuser.me/api/portraits/men/25.jpg",
-      description: (
-        <p>
-          With #CyberShield&apos;s AI-powered security systems, our data
-          protection levels are unmatched.
-          <Highlight>
-            Ensuring safety and trust in digital spaces.
-          </Highlight>{" "}
-          Redefining cybersecurity standards.
-        </p>
-      ),
-    },
-    {
-      id: "12",
-      name: "Nadia Ali",
-      role: "Product Manager at Creative Solutions",
-      img: "https://randomuser.me/api/portraits/women/78.jpg",
-      description: (
-        <p>
-          #DesignPro&apos;s AI has streamlined our creative process, enhancing
-          productivity and innovation.
-          <Highlight>Bringing creativity and technology together.</Highlight> A
-          game-changer for creative industries.
-        </p>
-      ),
-    },
-    {
-      id: "13",
-      name: "Omar Farooq",
-      role: "Founder at Startup Hub",
-      img: "https://randomuser.me/api/portraits/men/54.jpg",
-      description: (
-        <p>
-          #VentureAI&apos;s insights into startup ecosystems have been
-          invaluable for our growth and funding strategies.
-          <Highlight>
-            Empowering startups with data-driven decisions.
-          </Highlight>{" "}
-          A catalyst for startup success.
+          "The custom AI training infrastructure they delivered handles massive datasets effortlessly. From concept to production in 14 days. Impressive execution."
         </p>
       ),
     },
@@ -986,10 +924,11 @@ export const siteConfig = {
     id: "cta",
     title: "Automate. Simplify. Thrive",
     backgroundImage: "/agent-cta-background.webp",
-    button: {
-      text: "FREE custom demo today",
-      href: "/contact",
-    },
+     button: (
+      <LiquidButton href="/contact">
+        FREE custom demo today
+      </LiquidButton>
+    ),
     subtext: "No obligations, no questions asked",
   },
   footerLinks: [
