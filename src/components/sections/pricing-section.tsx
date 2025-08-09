@@ -47,7 +47,7 @@ const PricingSection = () => {
           </div>
 
           {/* Features List */}
-          <ul className="space-y-3 text-sm mb-8">
+          <ul className="space-y-3 text-sm mb-8 ">
             {tier.features.map((feature) => (
               <li key={feature} className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full border border-primary/20 flex items-center justify-center">
@@ -101,8 +101,10 @@ const PricingSection = () => {
           </div>
         </div>
 
-        {/* Calculator */}
-        <SavingsCalculator />
+        {/* Calculator - Smaller card */}
+        <div className="mx-auto w-full max-w-md rounded-xl border border-border dark:border-white/10 bg-white/70 dark:bg-zinc-900/50 backdrop-blur-md p-6 shadow-lg">
+          <SavingsCalculator />
+        </div>
       </div>
 
       {/* Row 2 - Trust Badges */}

@@ -45,7 +45,7 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({ className 
               type="number"
               value={monthlyRevenue}
               onChange={(e) => setMonthlyRevenue(Number(e.target.value))}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="max-w-32 pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent"
               placeholder="50000"
             />
           </div>
@@ -72,7 +72,7 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({ className 
       </div>
 
       {/* Results */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
         <motion.div
           className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
           whileHover={{ scale: 1.05 }}
@@ -86,7 +86,7 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({ className 
         </motion.div>
 
         <motion.div
-          className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+          className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 px-2"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
