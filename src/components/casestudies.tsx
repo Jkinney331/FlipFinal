@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { GlowingEffect } from "./ui/AcetrinityGlowCard";
+import { LiquidCard, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 
 const caseStudies = [
   {
@@ -41,42 +41,27 @@ const CaseStudiesSection = () => {
             key={index}
             className="relative rounded-xl overflow-visible group"
           >
-            {/* Glowing Effect */}
-            <GlowingEffect
-              blur={12}
-              glow
-              spread={30}
-              borderWidth={2}
-              movementDuration={1.5}
-              disabled={false}
-            />
-
-            {/* Card */}
-            <div
-              className={cn(
-                "relative z-10 rounded-xl border p-5 backdrop-blur-md",
-                "bg-white/70 text-gray-900 border-gray-300",
-                "dark:bg-zinc-900/80 dark:text-white dark:border-white/20"
-              )}
-            >
-              {/* Image */}
-              <div className="w-full h-60 2xl:h-96 relative rounded-lg overflow-hidden mb-4">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                />
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-
-              {/* Description */}
-              <p className="text-sm opacity-80 line-clamp-4 group-hover:line-clamp-none transition-all duration-300 ease-in-out">
-                {project.description}
-              </p>
-            </div>
+            <LiquidCard className="h-full">
+              <CardHeader>
+                {/* Image */}
+                <div className="w-full h-60 2xl:h-96 relative rounded-lg overflow-hidden mb-4">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  />
+                </div>
+                
+                <CardTitle className="text-lg font-semibold mb-2">
+                  {project.title}
+                </CardTitle>
+                
+                <CardDescription className="text-sm opacity-80 line-clamp-4 group-hover:line-clamp-none transition-all duration-300 ease-in-out">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+            </LiquidCard>
           </div>
         ))}
       </div>
