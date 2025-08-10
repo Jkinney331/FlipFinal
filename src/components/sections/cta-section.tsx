@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
@@ -25,13 +27,11 @@ const CTASection = () => {
               {ctaSection.title}
             </h1>
             <div className="absolute bottom-10 flex flex-col items-center justify-center gap-2">
-              <LiquidButton>
-              <Link
-                href={ctaSection.button.href}
-                className=" text-black font-semibold text-sm h-10 w-fit px-4 bg-transparent flex items-center justify-center"
+              <LiquidButton 
+                onClick={() => window.location.href = ctaSection.button.href}
+                className="text-black font-semibold text-sm h-10 w-fit px-4 bg-transparent flex items-center justify-center"
               >
                 {ctaSection.button.text}
-              </Link>
               </LiquidButton>
               <span className="text-white text-sm">{ctaSection.subtext}</span>
             </div>

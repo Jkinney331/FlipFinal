@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import clsx from "clsx";
 
@@ -14,6 +16,11 @@ export const LiquidButton = ({
   variant = "default",
   ...props
 }: LiquidButtonProps) => {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
   const sizeStyles = {
     sm: "px-4 py-2 text-sm",
     md: "px-6 py-3 text-base",
@@ -21,7 +28,7 @@ export const LiquidButton = ({
   };
 
   const variantStyles = {
-    default: "bg-white/30 dark:bg-white/10 border-black/10 dark:border-white/10",
+    default: mounted ? "bg-white/30 dark:bg-white/10 border-black/10 dark:border-white/10" : "bg-white/30",
     outline: "bg-transparent border border-current",
     ghost: "bg-transparent border-none",
   };
@@ -31,9 +38,9 @@ export const LiquidButton = ({
       {...props}
       className={clsx(
         `relative font-semibold rounded-xl 
-         text-black dark:text-white 
          backdrop-blur-md shadow-lg overflow-hidden 
          transition-all duration-300 hover:scale-105`,
+        mounted ? "text-black dark:text-white" : "text-black",
         sizeStyles[size],
         variantStyles[variant],
         className

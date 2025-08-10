@@ -91,13 +91,12 @@ const ContactSection = () => {
           </div>
 
          {/* Submit Button */}
-         <LiquidButton className="w-full  cursor-pointer">
-          <Button
+         <LiquidButton 
           type="submit"
-          className="bg-transparent hover:bg-transparent text-black dark:text-white px-4 py-2 rounded-lg transition"
-          disabled={isSubmitting}>
+          className="w-full cursor-pointer bg-transparent hover:bg-transparent text-black dark:text-white px-4 py-2 rounded-lg transition"
+          disabled={isSubmitting}
+        >
          {isSubmitting ? 'Sending...' : 'Send Message'}
-        </Button>
      </LiquidButton>
 
         </form>

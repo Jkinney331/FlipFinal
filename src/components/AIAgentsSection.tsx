@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { Card } from "@/components/ui/card";
+import React, { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
   TrendingUp,
@@ -9,8 +8,9 @@ import {
   MessageSquare,
   CheckCircle,
   Sparkles,
-  // Settings,
 } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Orb from "@/components/ui/Orb";
 
 const agentData = [
   {
@@ -20,6 +20,7 @@ const agentData = [
     description: "Transforms communication into actionable insights",
     icon: MessageSquare,
     specialty: "NLP",
+    hue: 280, // Purple/Pink for NLP
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const agentData = [
     description: "Forecasts trends before they happen",
     icon: TrendingUp,
     specialty: "Analytics",
+    hue: 200, // Blue for Analytics
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const agentData = [
     description: "Streamlines workflows with surgical precision",
     icon: Cog,
     specialty: "Automation",
+    hue: 40, // Orange for Automation
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const agentData = [
     description: "Amplifies your brand voice across all channels",
     icon: MessageSquare,
     specialty: "Social",
+    hue: 150, // Green for Social
   },
   {
     id: 5,
@@ -52,87 +56,184 @@ const agentData = [
     description: "Keeps everything running like clockwork",
     icon: CheckCircle,
     specialty: "Operations",
+    hue: 260, // Indigo for Operations
   },
 ];
 
- const AIAgentsSection = () => {
-  const [selectedAgent, setSelectedAgent] = useState(agentData[0]);
+function AIAgentsSection() {
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+
+  const [viewportRef, embla] = useEmblaCarousel({ align: "center", loop: true });
+
+  const palette = useMemo(
+    () => ({
+      NLP: "from-fuchsia-500 to-pink-500",
+      Analytics: "from-blue-500 to-cyan-500",
+      Automation: "from-amber-400 to-orange-500",
+      Social: "from-emerald-500 to-green-400",
+      Operations: "from-indigo-500 to-purple-500",
+      Default: "from-slate-300 to-slate-500",
+    }),
+    []
+  );
 
   return (
-    <section className="py-20 bg-agent-background px-4">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+    <section className="py-32 bg-white">
+      <div className="mx-auto px-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Meet Your Specialized AI Agents
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
             Every agent comes with an intuitive dashboard to fine-tune, train, and optimize performance.
           </p>
         </div>
 
-        {/* Agents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-          {agentData.map((agent) => {
-            const IconComponent = agent.icon;
-            return (
-              <Card
-                key={agent.id}
-                onClick={() => setSelectedAgent(agent)}
-                className={`group p-8 cursor-pointer border-agent-border hover:shadow-agent transition-all duration-300 hover:-translate-y-2 relative overflow-hidden bg-white text-black dark:bg-zinc-800 dark:text-white ${
-                  selectedAgent.id === agent.id ? "ring-2 ring-primary" : ""
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-6 h-6 text-primary" />
+        {/* Full-width carousel */}
+        <div className="relative">
+          <div className="overflow-hidden" ref={viewportRef}>
+            <div className="flex">
+              {agentData.map((agent) => {
+                const Icon = agent.icon;
+                const gradient = (palette as any)[agent.specialty] || palette.Default;
+
+                return (
+                  <div key={agent.id} className="flex-[0_0_100%] px-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
+                      {/* Large Orb */}
+                      <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+                        <div className="w-[500px] h-[500px] md:w-[600px] md:h-[600px]">
+                          <Orb
+                            hue={agent.hue}
+                            hoverIntensity={0.41}
+                            rotateOnHover={true}
+                            forceHoverState={false}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Clean profile card */}
+                      <div className="order-1 lg:order-2 flex flex-col justify-center">
+                        <div className="space-y-8">
+                          {/* Icon and title */}
+                          <div className="flex items-center gap-6">
+                            <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${gradient} ring-1 ring-black/5 grid place-items-center text-white shadow-lg`}>
+                              <Icon className="h-8 w-8" />
+                            </div>
+                            <div>
+                              <div className="text-sm tracking-wider uppercase font-semibold text-muted-foreground mb-2">
+                                {agent.specialty}
+                              </div>
+                              <h3 className="text-5xl md:text-6xl font-bold text-foreground">
+                                {agent.name}
+                              </h3>
+                            </div>
+                          </div>
+
+                          {/* Role */}
+                          <h4 className="text-2xl md:text-3xl font-medium text-muted-foreground leading-tight">
+                            {agent.role}
+                          </h4>
+
+                          {/* Description */}
+                          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                            {agent.description}
+                          </p>
+
+                          {/* CTA */}
+                          <div className="pt-4">
+                            <button className="px-8 py-4 rounded-2xl bg-foreground text-background font-semibold text-lg tracking-wide transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95">
+                              Explore {agent.name}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {agent.specialty}
-                    </Badge>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{agent.name}</h3>
-                  <p className="text-sm font-medium mb-3 text-blue-500">{agent.role}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{agent.description}</p>
+                );
+              })}
+              
+              {/* Custom agent slide */}
+              <div className="flex-[0_0_100%] px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
+                  {/* Large Orb */}
+                  <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+                    <div className="w-[500px] h-[500px] md:w-[600px] md:h-[600px]">
+                      <Orb
+                        hue={120}
+                        hoverIntensity={0.41}
+                        rotateOnHover={true}
+                        forceHoverState={false}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Clean profile card */}
+                  <div className="order-1 lg:order-2 flex flex-col justify-center">
+                    <div className="space-y-8">
+                      {/* Icon and title */}
+                      <div className="flex items-center gap-6">
+                        <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-slate-400 to-slate-600 ring-1 ring-black/5 grid place-items-center text-white shadow-lg">
+                          <Sparkles className="h-8 w-8" />
+                        </div>
+                        <div>
+                          <div className="text-sm tracking-wider uppercase font-semibold text-muted-foreground mb-2">
+                            Custom
+                          </div>
+                          <h3 className="text-5xl md:text-6xl font-bold text-foreground">
+                            Your Agent
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* Role */}
+                      <h4 className="text-2xl md:text-3xl font-medium text-muted-foreground leading-tight">
+                        Built Just for You
+                      </h4>
+
+                      {/* Description */}
+                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                        We will create the exact AI agent your business needs, tailored to your specific workflows and requirements.
+                      </p>
+
+                      {/* CTA */}
+                      <div className="pt-4">
+                        <button className="px-8 py-4 rounded-2xl bg-foreground text-background font-semibold text-lg tracking-wide transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95">
+                          Get Started
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </Card>
-            );
-          })}
-
-          {/* Custom Agent Card */}
-          <Card className="group p-8 bg-white text-black dark:bg-zinc-800 dark:text-white border-none hover:shadow-glow transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-            <div className="relative z-10 text-center">
-              <div className="p-3 rounded-full bg-white/20 mx-auto mb-4 w-fit">
-                <Sparkles className="w-6 h-6 text-black dark:text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Your Custom Agent</h3>
-              <p className="text-black dark:text-white text-sm font-medium mb-3">Built Just for You</p>
-              <p className="text-black dark:text-white text-sm leading-relaxed mb-6">
-                {`We'll`} create the exact AI agent your business needs
-              </p>
             </div>
-          </Card>
+          </div>
+
+          {/* Navigation controls */}
+          <div className="flex items-center justify-center gap-4 mt-16">
+            <button
+              aria-label="Previous agent"
+              className="size-14 rounded-full bg-[#f5f5f7] text-[#1d1d1f] grid place-items-center transition-all duration-200 hover:scale-110 hover:bg-[#e8e8ed] shadow-lg"
+              onClick={() => embla?.scrollPrev()}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button
+              aria-label="Next agent"
+              className="size-14 rounded-full bg-[#f5f5f7] text-[#1d1d1f] grid place-items-center transition-all duration-200 hover:scale-110 hover:bg-[#e8e8ed] shadow-lg"
+              onClick={() => embla?.scrollNext()}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
-
-        {/* Connection Line */}
-        {/* <div className="relative flex items-center justify-center mb-16">
-          <div className="w-1 h-20 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 animate-pulse rounded-full" />
-        </div> */}
-
-        {/* AI Control Dashboard Section */}
-        {/* <div className="max-w-4xl mx-auto p-8 bg-zinc-100 dark:bg-zinc-800 rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-md text-center">
-          <Settings className="mx-auto text-indigo-500 dark:text-indigo-400" size={48} />
-          <h4 className="text-2xl font-semibold text-black dark:text-white mt-4">{selectedAgent.name}'s Dashboard</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            Fine-tune and monitor: <span className="font-medium text-indigo-600 dark:text-indigo-400">{selectedAgent.role}</span>
-          </p>
-          <p className="text-sm text-muted-foreground mt-1">{selectedAgent.description}</p>
-        </div> */}
       </div>
     </section>
   );
-};
+}
 
 export default AIAgentsSection; 

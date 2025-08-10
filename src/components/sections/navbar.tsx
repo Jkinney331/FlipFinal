@@ -121,9 +121,12 @@ export function Navbar() {
 
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
               <div className="flex items-center space-x-6">
-                <Link href="#">
-              <LiquidButton className="md:block hidden cursor-pointer">Try for free</LiquidButton>
-                </Link>
+                <LiquidButton 
+                  className="md:block hidden cursor-pointer" 
+                  onClick={() => window.open("#", "_self")}
+                >
+                  Try for free
+                </LiquidButton>
               </div>
               <ThemeToggle />
               <button
