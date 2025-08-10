@@ -392,3 +392,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Logo readability helpers */
+.logo-auto {
+  opacity: 0.85;
+  transition: opacity 150ms ease;
+}
+.logo-auto:hover {
+  opacity: 1;
+}
+/* For monochrome/black logos that disappear on dark backgrounds */
+.dark .logo-invert-dark {
+  filter: invert(1) brightness(1.2) contrast(100%);
+}
+
+/* For colored logos where only lightening is desired in dark mode (avoid full invert) */
+.dark .logo-brighten-dark {
+  filter: brightness(1.8) contrast(1.15);
+}

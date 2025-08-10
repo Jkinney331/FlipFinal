@@ -97,7 +97,7 @@ export const siteConfig = {
       alt="unrealengine"
       width={80}
       height={20}
-      className=""
+      className="logo-auto logo-brighten-dark"
     />
   )
 },
@@ -110,7 +110,7 @@ export const siteConfig = {
       alt="aws"
       width={80}
       height={20}
-      className=""
+      className="logo-auto logo-invert-dark"
     />
   )
 },
@@ -149,7 +149,7 @@ export const siteConfig = {
       alt="microsoft"
       width={320}
       height={200}
-      className=""
+      className="logo-auto logo-invert-dark"
     />
   )
 },
@@ -162,7 +162,7 @@ export const siteConfig = {
       alt="openai"
       width={80}
       height={20}
-      className=""
+      className="logo-auto logo-invert-dark"
     />
   )
 },
@@ -175,7 +175,7 @@ export const siteConfig = {
       alt="coinbase"
       width={80}
       height={20}
-      className=""
+      className="logo-auto logo-invert-dark"
     />
   )
 },
@@ -188,7 +188,7 @@ export const siteConfig = {
       alt="shopify"
       width={80}
       height={20}
-      className=""
+      className="logo-auto"
     />
   )
 },
@@ -196,13 +196,16 @@ export const siteConfig = {
   id: 9,
   name: "Company 9",
   logo: (
-    <Image
-      src="/stripe.svg"
-      alt="stripe"
-      width={80}
-      height={20}
-      className=""
-    />
+    <>
+      {/* Use official Stripe wordmark from CDN; readable in light and dark */}
+      <Image
+        src="https://brand.stripe.com/img/v3/stripe_rgb.svg"
+        alt="stripe"
+        width={110}
+        height={28}
+        className="logo-auto dark:brightness-110"
+      />
+    </>
   )
 },
       {
@@ -214,7 +217,7 @@ export const siteConfig = {
       alt="unity"
       width={80}
       height={20}
-      className=""
+      className="logo-auto logo-invert-dark"
     />
   )
 },
@@ -227,7 +230,7 @@ export const siteConfig = {
       alt="anthropoid"
       width={80}
       height={20}
-      className=""
+      className="logo-auto logo-invert-dark"
     />
   )
 },
@@ -235,13 +238,23 @@ export const siteConfig = {
   id: 12,
   name: "Company 12",
   logo: (
-    <Image
-      src="/adobe.svg"
-      alt="adobe"
-      width={80}
-      height={20}
-      className=""
-    />
+    <>
+      {/* Light mode: original; Dark mode: white wordmark with red logo */}
+      <Image
+        src="/adobe.svg"
+        alt="adobe"
+        width={90}
+        height={24}
+        className="logo-auto block dark:hidden"
+      />
+      <Image
+        src="/adobe-dark.svg"
+        alt="adobe"
+        width={90}
+        height={24}
+        className="logo-auto hidden dark:block"
+      />
+    </>
   )
 },
 

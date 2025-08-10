@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react";
 import { FlippingCard } from "../sections/flipping-card";
 import { Code2, TrendingUp, Zap, Settings } from "lucide-react";
 
+// Unified gradient for all "Hidden Advantage" cards
+const CARD_GRADIENT = "from-blue-600 via-blue-500 to-indigo-600";
+
 const hiddenAdvantageData = [
   {
     front: {
       icon: <Code2 size={56} className="text-white drop-shadow-lg" />,
       title: "Technical Expertise",
-      gradient: "from-blue-600 via-blue-500 to-indigo-600"
+      gradient: CARD_GRADIENT
     },
     back: {
       description: "We speak both languages—complex AI and practical business. Our engineers don't just build, they build what matters."
@@ -19,7 +22,7 @@ const hiddenAdvantageData = [
     front: {
       icon: <TrendingUp size={56} className="text-white drop-shadow-lg" />,
       title: "Business Acumen",
-      gradient: "from-emerald-600 via-green-500 to-teal-600"
+      gradient: CARD_GRADIENT
     },
     back: {
       description: "We've been in your shoes. We know what keeps you up at night and what moves the needle. Every solution is designed for real-world impact."
@@ -29,7 +32,7 @@ const hiddenAdvantageData = [
     front: {
       icon: <Zap size={56} className="text-white drop-shadow-lg" />,
       title: "Rapid Execution",
-      gradient: "from-amber-500 via-yellow-500 to-orange-500"
+      gradient: CARD_GRADIENT
     },
     back: {
       description: "While others plan, we deliver. Our 14-day promise isn't a gimmick—it's our proven methodology that gets you results before competitors finish their first meeting."
@@ -39,7 +42,7 @@ const hiddenAdvantageData = [
     front: {
       icon: <Settings size={56} className="text-white drop-shadow-lg" />,
       title: "Future-Ready Solutions",
-      gradient: "from-purple-600 via-violet-500 to-fuchsia-600"
+      gradient: CARD_GRADIENT
     },
     back: {
       description: "We don't just solve today's problems. Our AI solutions are built to evolve with your business and stay ahead of the curve."
