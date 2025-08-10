@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 
 // Configuration exports
 export const runtime = "edge";
-export const alt = "SkyAgent - AI-powered agents with Magic UI";
+export const alt = "FlipTech Pro - Transform your business with cutting-edge AI solutions in 14 days";
 export const size = {
   width: 1200,
   height: 630,

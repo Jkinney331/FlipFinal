@@ -5,15 +5,25 @@ import Link from "next/link";
 import { LiquidButton } from "../ui/Liquid-button";
 import Hyperspeed from "../ui/auoralightray";
 import { hyperspeedPresets } from "@/components/ui/hyperspeed";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 const HeroSection = () => {
   const { hero } = siteConfig;
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section id="hero" className="w-full relative">
-      <div style={{ width: '100%', height: '600px', position: 'absolute'}}>
-        <Hyperspeed effectOptions={hyperspeedPresets.one} />
-      </div>
+      {!prefersReducedMotion && (
+        <div style={{ width: '100%', height: '600px', position: 'absolute'}}>
+          <Hyperspeed effectOptions={hyperspeedPresets.one as any} />
+        </div>
+      )}
+      {prefersReducedMotion && (
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background"
+          style={{ width: '100%', height: '600px' }}
+        />
+      )}
       <div className="relative flex flex-col items-center w-full px-6">
         {/* <div className="absolute inset-0">
           <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full animated-bg rounded-b-xl" />

@@ -19,29 +19,79 @@ import ContactSection from "@/components/sections/Contact";
 import HeroSection from "@/components/sections/hero-section";
 import WhyNowSection from "@/components/WhyNowSec";
 import dynamic from "next/dynamic";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import { LazyWebGL } from "@/components/LazyWebGL";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
       
-      <HeroSection />
-      <CompanyShowcase />
-      <BentoSection />
+      <ErrorBoundary>
+        <HeroSection />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <CompanyShowcase />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <BentoSection />
+      </ErrorBoundary>
+      
       {/* <QuoteSection /> */}
       {/* <EmpowerCards/> */}
       {/* <FeatureSection /> */}
-      <AIAgentsSection/>
-      <AIDashboard/>
-      <GlowCard/>
-      <GrowthSection />
-      <FlipTechProcess/>
-      <CaseStudiesSection/>
-      <WhyNowSection/>
-      <PricingSection />
-      <TestimonialSection />
-      <ContactSection/>
-      <FAQSection />
-      <CTASection />
+      
+      <ErrorBoundary>
+        <AIAgentsSection/>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <AIDashboard/>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <LazyWebGL height="600px" disableOnReducedMotion={true}>
+          <GlowCard/>
+        </LazyWebGL>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <GrowthSection />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <FlipTechProcess/>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <CaseStudiesSection/>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <WhyNowSection/>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <PricingSection />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <TestimonialSection />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <ContactSection/>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <FAQSection />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <CTASection />
+      </ErrorBoundary>
+      
       <FooterSection />
     </main>
   );

@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 interface Step {
@@ -16,31 +16,31 @@ export default function FlipTechProcess() {
 
   const steps: Step[] = [
     {
-      icon: <Image src="/bulb.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
+      icon: <Image src="/bulb.svg" alt="Light bulb icon representing discovery and strategy phase" width={24} height={24} className="w-6 h-6" />,
       day: "Days 1–2",
       title: "Discovery & Strategy",
       desc: "We uncover your business challenges and outline the perfect AI solution.",
     },
     {
-      icon: <Image src="/calender.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
+      icon: <Image src="/calender.svg" alt="Calendar icon representing solution design phase" width={24} height={24} className="w-6 h-6" />,
       day: "Days 3–5",
       title: "Solution Design",
       desc: "Our engineers architect the technical approach and data strategy.",
     },
     {
-      icon: <Image src="/code.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
+      icon: <Image src="/code.svg" alt="Code icon representing rapid development phase" width={24} height={24} className="w-6 h-6" />,
       day: "Days 6–10",
       title: "Rapid Development",
       desc: "Intensive development sprint brings your AI solution to life.",
     },
     {
-      icon: <Image src="/testing.svg" alt="icon" width={28} height={28} className="w-6 h-6" />,
+      icon: <Image src="/testing.svg" alt="Testing icon representing testing and refinement phase" width={28} height={28} className="w-6 h-6" />,
       day: "Days 11–13",
       title: "Testing & Refinement",
       desc: "Rigorous testing ensures your AI solution works flawlessly.",
     },
     {
-      icon: <Image src="/rocket.svg" alt="icon" width={24} height={24} className="w-6 h-6" />,
+      icon: <Image src="/rocket.svg" alt="Rocket icon representing launch phase" width={24} height={24} className="w-6 h-6" />,
       day: "Day 14",
       title: "Launch",
       desc: "Your AI solution goes live with comprehensive documentation and support.",

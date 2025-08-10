@@ -28,7 +28,7 @@ const drawerVariants = {
     y: 0,
     rotate: 0,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 15,
       stiffness: 200,
       staggerChildren: 0.03,
@@ -39,7 +39,7 @@ const drawerVariants = {
     y: 100,
     transition: { duration: 0.1 },
   },
-};
+} as const;
 
 const drawerMenuContainerVariants = {
   hidden: { opacity: 0 },

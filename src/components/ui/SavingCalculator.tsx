@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Calculator, TrendingUp, DollarSign, Clock } from "lucide-react";
 
 interface SavingsCalculatorProps {

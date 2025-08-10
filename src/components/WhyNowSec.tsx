@@ -3,7 +3,7 @@
 import React from "react";
 import { GlowingEffect } from "./ui/AcetrinityGlowCard";
 import { TrendingUp, Puzzle, Rocket } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const reasons = [
   {

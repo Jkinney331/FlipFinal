@@ -5,7 +5,6 @@ import { ThirdBentoAnimation } from "@/components/third-bento-animation";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Globe } from "@/components/ui/globe";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 import Image from "next/image";
 
 export const Highlight = ({
@@ -30,15 +29,15 @@ export const Highlight = ({
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Cal AI",
-  description: "Smart scheduling powered by AI.",
+  name: "FlipTech Pro",
+  description: "Transform your business with cutting-edge AI solutions in just 14 days.",
   cta: "Get Started",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   keywords: [
-    "AI Calendar",
-    "Smart Scheduling",
-    "Productivity",
-    "Time Management",
+    "FlipTech Pro",
+    "AI Solutions",
+    "Business Automation",
+    "AI Development",
   ],
   // links: {
   //   email: "support@calai.app",
@@ -94,7 +93,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/unrealengine.png"
-      alt="unrealengine"
+      alt="Unreal Engine logo - gaming and 3D development platform"
       width={80}
       height={20}
       className="logo-auto logo-brighten-dark"
@@ -107,7 +106,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/aws.svg"
-      alt="aws"
+      alt="Amazon Web Services logo - cloud computing platform"
       width={80}
       height={20}
       className="logo-auto logo-invert-dark"
@@ -120,7 +119,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/loom.svg"
-      alt="loom"
+      alt="Loom logo - video messaging and screen recording platform"
       width={80}
       height={20}
       className=""
@@ -133,7 +132,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/google.svg"
-      alt="google"
+      alt="Google logo - technology and search company"
       width={80}
       height={20}
       className=""
@@ -146,7 +145,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/microsoft.svg"
-      alt="microsoft"
+      alt="Microsoft logo - technology and software company"
       width={320}
       height={200}
       className="logo-auto logo-invert-dark"
@@ -159,7 +158,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/openai.svg"
-      alt="openai"
+      alt="OpenAI logo - artificial intelligence research company"
       width={80}
       height={20}
       className="logo-auto logo-invert-dark"
@@ -172,7 +171,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/coinbase.svg"
-      alt="coinbase"
+      alt="Coinbase logo - cryptocurrency exchange platform"
       width={80}
       height={20}
       className="logo-auto logo-invert-dark"
@@ -185,7 +184,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/shopify.svg"
-      alt="shopify"
+      alt="Shopify logo - e-commerce platform"
       width={80}
       height={20}
       className="logo-auto"
@@ -200,7 +199,7 @@ export const siteConfig = {
       {/* Use official Stripe wordmark from CDN; readable in light and dark */}
       <Image
         src="https://brand.stripe.com/img/v3/stripe_rgb.svg"
-        alt="stripe"
+        alt="Stripe logo - online payment processing platform"
         width={110}
         height={28}
         className="logo-auto dark:brightness-110"
@@ -214,7 +213,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/unity.svg"
-      alt="unity"
+      alt="Unity logo - game development platform"
       width={80}
       height={20}
       className="logo-auto logo-invert-dark"
@@ -227,7 +226,7 @@ export const siteConfig = {
   logo: (
     <Image
       src="/anthropoid.svg"
-      alt="anthropoid"
+      alt="Anthropic logo - AI safety and research company"
       width={80}
       height={20}
       className="logo-auto logo-invert-dark"
@@ -242,14 +241,14 @@ export const siteConfig = {
       {/* Light mode: original; Dark mode: white wordmark with red logo */}
       <Image
         src="/adobe.svg"
-        alt="adobe"
+        alt="Adobe logo - creative software and digital media company"
         width={90}
         height={24}
         className="logo-auto block dark:hidden"
       />
       <Image
         src="/adobe-dark.svg"
-        alt="adobe"
+        alt="Adobe logo - creative software and digital media company"
         width={90}
         height={24}
         className="logo-auto hidden dark:block"
@@ -684,19 +683,14 @@ export const siteConfig = {
                 </defs>
               </svg>
             </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="size-full"
-            >
+            <div className="size-full">
               <FlickeringGrid
                 className="size-full"
                 gridGap={4}
                 squareSize={2}
                 maxOpacity={0.5}
               />
-            </motion.div>
+            </div>
           </div>
         ),
 
@@ -892,7 +886,7 @@ export const siteConfig = {
   faqSection: {
     title: "Frequently Asked Questions",
     description:
-      "Answers to common questions about SkyAgent and its features. If you have any other questions, please don't hesitate to contact us.",
+      "Answers to common questions about FlipTech Pro and its features. If you have any other questions, please don't hesitate to contact us.",
     faQitems: [
       {
         id: 1,

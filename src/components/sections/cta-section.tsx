@@ -17,7 +17,7 @@ const CTASection = () => {
         <div className="h-[400px] md:h-[400px] overflow-hidden shadow-xl w-full border border-border rounded-xl bg-secondary relative z-20">
           <Image
             src={ctaSection.backgroundImage}
-            alt="Agent CTA Background"
+            alt="FlipTech Pro call-to-action background featuring AI technology and automation themes"
             className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
             fill
             loading="lazy"
