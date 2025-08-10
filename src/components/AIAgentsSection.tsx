@@ -12,12 +12,31 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import Orb from "@/components/ui/Orb";
 
-const agentData = [
+interface Agent {
+  id: number;
+  name: string;
+  role: string;
+  badge: string;
+  description: string;
+  capabilities: string[];
+  icon: React.ComponentType<any>;
+  specialty: string;
+  hue: number;
+}
+
+const agentData: Agent[] = [
   {
     id: 1,
     name: "Nancy",
     role: "Natural Language Processing Specialist",
-    description: "Transforms communication into actionable insights",
+    badge: "NLP SPECIALIST",
+    description: "Advanced natural language processing that transforms unstructured communication into actionable business insights with precision and context awareness.",
+    capabilities: [
+      "Sentiment Analysis & Emotion Detection",
+      "Document Processing & Extraction",
+      "Conversation Intelligence",
+      "Content Classification & Tagging"
+    ],
     icon: MessageSquare,
     specialty: "NLP",
     hue: 280, // Purple/Pink for NLP
@@ -25,8 +44,15 @@ const agentData = [
   {
     id: 2,
     name: "Ellis",
-    role: "Predictive Analytics Expert",
-    description: "Forecasts trends before they happen",
+    role: "Predictive Analytics Expert", 
+    badge: "ANALYTICS EXPERT",
+    description: "Sophisticated predictive modeling that identifies patterns, forecasts trends, and provides data-driven recommendations before opportunities emerge.",
+    capabilities: [
+      "Predictive Forecasting & Modeling",
+      "Customer Behavior Analysis",
+      "Market Trend Detection",
+      "Risk Assessment & Mitigation"
+    ],
     icon: TrendingUp,
     specialty: "Analytics",
     hue: 200, // Blue for Analytics
@@ -35,7 +61,14 @@ const agentData = [
     id: 3,
     name: "Justin",
     role: "Intelligent Automation Architect",
-    description: "Streamlines workflows with surgical precision",
+    badge: "AUTOMATION ARCHITECT",
+    description: "Intelligent automation that streamlines complex workflows, eliminates manual bottlenecks, and optimizes operational efficiency across systems.",
+    capabilities: [
+      "Workflow Optimization & Design",
+      "Process Automation & Integration",
+      "Quality Control & Monitoring",
+      "Performance Analytics & Reporting"
+    ],
     icon: Cog,
     specialty: "Automation",
     hue: 40, // Orange for Automation
@@ -44,7 +77,14 @@ const agentData = [
     id: 4,
     name: "Dan",
     role: "Social Media Strategist",
-    description: "Amplifies your brand voice across all channels",
+    badge: "SOCIAL STRATEGIST",
+    description: "Strategic social media management that amplifies brand voice, engages audiences, and drives meaningful connections across all digital channels.",
+    capabilities: [
+      "Content Strategy & Planning",
+      "Audience Engagement & Growth",
+      "Brand Voice Consistency",
+      "Performance Tracking & Optimization"
+    ],
     icon: MessageSquare,
     specialty: "Social",
     hue: 150, // Green for Social
@@ -53,7 +93,14 @@ const agentData = [
     id: 5,
     name: "Chloe",
     role: "Project Operations Manager",
-    description: "Keeps everything running like clockwork",
+    badge: "OPERATIONS MANAGER",
+    description: "Comprehensive project operations management that ensures seamless execution, resource optimization, and timely delivery of business objectives.",
+    capabilities: [
+      "Project Planning & Coordination",
+      "Resource Allocation & Management",
+      "Timeline Tracking & Optimization",
+      "Stakeholder Communication"
+    ],
     icon: CheckCircle,
     specialty: "Operations",
     hue: 260, // Indigo for Operations
@@ -115,35 +162,58 @@ function AIAgentsSection() {
                       {/* Clean profile card */}
                       <div className="order-1 lg:order-2 flex flex-col justify-center">
                         <div className="space-y-8">
-                          {/* Icon and title */}
-                          <div className="flex items-center gap-6">
-                            <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${gradient} ring-1 ring-black/5 grid place-items-center text-white shadow-lg`}>
-                              <Icon className="h-8 w-8" />
-                            </div>
-                            <div>
-                              <div className="text-sm tracking-wider uppercase font-semibold text-muted-foreground mb-2">
-                                {agent.specialty}
-                              </div>
-                              <h3 className="text-5xl md:text-6xl font-bold text-foreground">
-                                {agent.name}
-                              </h3>
+                          {/* Specialty badge */}
+                          <div className="animate-fade-up animate-delay-100">
+                            <Badge 
+                              variant="outline" 
+                              className="text-xs tracking-widest font-bold px-4 py-2 bg-muted/50 text-muted-foreground border-muted-foreground/20"
+                            >
+                              {agent.badge}
+                            </Badge>
+                          </div>
+
+                          {/* Agent name */}
+                          <div className="animate-fade-up animate-delay-200">
+                            <h3 className="text-5xl md:text-6xl font-bold text-foreground">
+                              {agent.name}
+                            </h3>
+                          </div>
+
+                          {/* Description */}
+                          <div className="animate-fade-up animate-delay-300">
+                            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                              {agent.description}
+                            </p>
+                          </div>
+
+                          {/* Key Capabilities */}
+                          <div className="animate-fade-up animate-delay-[400ms]">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-semibold text-foreground">
+                                Key Capabilities
+                              </h4>
+                              <ul className="space-y-3">
+                                {agent.capabilities.map((capability, index) => (
+                                  <li 
+                                    key={index} 
+                                    className={`flex items-center gap-3 animate-fade-up animate-delay-[${500 + index * 100}ms]`}
+                                  >
+                                    <div className="flex-shrink-0">
+                                      <CheckCircle className="h-5 w-5 text-green-500" />
+                                    </div>
+                                    <span className="text-muted-foreground">
+                                      {capability}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
                           </div>
 
-                          {/* Role */}
-                          <h4 className="text-2xl md:text-3xl font-medium text-muted-foreground leading-tight">
-                            {agent.role}
-                          </h4>
-
-                          {/* Description */}
-                          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                            {agent.description}
-                          </p>
-
                           {/* CTA */}
-                          <div className="pt-4">
+                          <div className="pt-4 animate-fade-up animate-delay-[800ms]">
                             <button className="px-8 py-4 rounded-2xl bg-foreground text-background font-semibold text-lg tracking-wide transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95">
-                              Explore {agent.name}
+                              Book Demo
                             </button>
                           </div>
                         </div>
@@ -171,35 +241,58 @@ function AIAgentsSection() {
                   {/* Clean profile card */}
                   <div className="order-1 lg:order-2 flex flex-col justify-center">
                     <div className="space-y-8">
-                      {/* Icon and title */}
-                      <div className="flex items-center gap-6">
-                        <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-slate-400 to-slate-600 ring-1 ring-black/5 grid place-items-center text-white shadow-lg">
-                          <Sparkles className="h-8 w-8" />
-                        </div>
-                        <div>
-                          <div className="text-sm tracking-wider uppercase font-semibold text-muted-foreground mb-2">
-                            Custom
-                          </div>
-                          <h3 className="text-5xl md:text-6xl font-bold text-foreground">
-                            Your Agent
-                          </h3>
+                      {/* Specialty badge */}
+                      <div className="animate-fade-up animate-delay-100">
+                        <Badge 
+                          variant="outline" 
+                          className="text-xs tracking-widest font-bold px-4 py-2 bg-muted/50 text-muted-foreground border-muted-foreground/20"
+                        >
+                          CUSTOM SOLUTION
+                        </Badge>
+                      </div>
+
+                      {/* Agent name */}
+                      <div className="animate-fade-up animate-delay-200">
+                        <h3 className="text-5xl md:text-6xl font-bold text-foreground">
+                          Your Agent
+                        </h3>
+                      </div>
+
+                      {/* Description */}
+                      <div className="animate-fade-up animate-delay-300">
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                          We create bespoke AI agents tailored specifically to your business needs, integrating seamlessly with your existing workflows and systems.
+                        </p>
+                      </div>
+
+                      {/* Key Capabilities */}
+                      <div className="animate-fade-up animate-delay-[400ms]">
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-semibold text-foreground">
+                            What You Get
+                          </h4>
+                          <ul className="space-y-3">
+                            {["Custom AI Agent Development", "Full Integration & Training", "Ongoing Support & Optimization", "Dedicated Success Manager"].map((capability, index) => (
+                              <li 
+                                key={index} 
+                                className={`flex items-center gap-3 animate-fade-up animate-delay-[${500 + index * 100}ms]`}
+                              >
+                                <div className="flex-shrink-0">
+                                  <CheckCircle className="h-5 w-5 text-green-500" />
+                                </div>
+                                <span className="text-muted-foreground">
+                                  {capability}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
 
-                      {/* Role */}
-                      <h4 className="text-2xl md:text-3xl font-medium text-muted-foreground leading-tight">
-                        Built Just for You
-                      </h4>
-
-                      {/* Description */}
-                      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                        We will create the exact AI agent your business needs, tailored to your specific workflows and requirements.
-                      </p>
-
                       {/* CTA */}
-                      <div className="pt-4">
+                      <div className="pt-4 animate-fade-up animate-delay-[800ms]">
                         <button className="px-8 py-4 rounded-2xl bg-foreground text-background font-semibold text-lg tracking-wide transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95">
-                          Get Started
+                          Book Demo
                         </button>
                       </div>
                     </div>
